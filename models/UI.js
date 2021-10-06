@@ -33,13 +33,13 @@ export class UI{
      * @param {number} score the total score of the questions
      */
     showScores(score){
-        const quizEndHTML = `
-        <h1> Result </h1>
-        <h2> Your Score: ${score}</h2>
-        `
-
-        const element = document.getElementById('quiz');
-        element.innerHtml = quizEndHTML;
+        const gameOverHTML = `
+        <h1>Result</h1>
+        <h2 id="score">Your scores: ${score}</h2>
+        `;
+  
+        const element = document.getElementById("quiz");
+        element.innerHTML = gameOverHTML;
     }
 
     /**
@@ -49,6 +49,6 @@ export class UI{
      */
     showProgress(currentIndex, total){
         const element = document.getElementById('progress');
-        element.innerHtml = `Question ${currentIndex} of ${total}`;
+        element.innerText = `Question ${currentIndex} of ${total}`;
     }
 }
